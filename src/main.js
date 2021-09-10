@@ -3,8 +3,15 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import axios from 'axios'
+import elementui from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css';
 
-Vue.config.productionTip = false
+axios.defaults.baseURL="http://localhost:8081";
+Vue.prototype.$http=axios
+Vue.prototype.$host = "http://192.168.56.103";
+// Vue.prototype.$host = "http://localhost:8082";
+Vue.use(elementui);
 
 /* eslint-disable no-new */
 new Vue({
